@@ -570,6 +570,10 @@ video {
   position: relative;
 }
 
+.inset-0{
+  inset: 0px;
+}
+
 .left-0{
   left: 0px;
 }
@@ -580,6 +584,14 @@ video {
 
 .top-5{
   top: 1.25rem;
+}
+
+.bottom-0{
+  bottom: 0px;
+}
+
+.right-0{
+  right: 0px;
 }
 
 .z-10{
@@ -651,12 +663,65 @@ video {
   height: 100%;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
+.h-\[200vh\]{
+  height: 200vh;
+}
+
+.h-\[120vh\]{
+  height: 120vh;
+}
+
+.h-\[140vh\]{
+  height: 140vh;
+}
+
+.h-\[160vh\]{
+  height: 160vh;
+}
+
+.h-\[1vmax\]{
+  height: 1vmax;
+}
+
+.h-\[100vmax\]{
+  height: 100vmax;
+}
+
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-dvh{
+  height: 100dvh;
+}
+
+.h-lvh{
+  height: 100lvh;
+}
+
+.h-svh{
+  height: 100svh;
+}
+
+.min-h-screen{
+  min-height: 100vh;
+}
+
 .w-\[225px\]{
   width: 225px;
 }
 
 .w-full{
   width: 100%;
+}
+
+.w-screen{
+  width: 100vw;
 }
 
 .min-w-\[300px\]{
@@ -895,6 +960,11 @@ video {
 
 .blur-sm{
   --tw-blur: blur(4px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.blur{
+  --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
