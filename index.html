@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./assets/favicon.ico" rel="icon" type="image/x-icon">
+    <title>OpenAC</title>
+    <style>
+        .dotted-background {
+            background-image: radial-gradient(circle, rgba(220, 200, 110, 0.135) 2px, transparent 0);
+            background-size: 60px 60px;
+        }
+        ::selection {
+            background-color: rgba(220, 200, 110, 0.135);
+            color: white;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 100%;
+        }
+        .paragraph {
+            text-justify: inter-word;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body class="grid justify-center h-[100vh] font-montserrat bg-[#070707] content-start p-28 gap-[100px]">
+    <div class="flex bg-[#0f0f0f] bg-opacity-50 backdrop-blur-[7px] border-[#535353] justify-self-center border-opacity-25 border-[1.5px] items-center fixed h-[90px] max-w-[calc(100%-240px)] w-full mx-auto top-5 rounded-2xl p-[50px] min-w-[300px] z-10"> <!-- Top bar -->
+        <img class="h-[50px]" src="./assets/images/openac_logo.png">
+        <div class="hidden lg:flex ml-auto h-full content-end justify-center items-center text-navigation-item space-x-4 cursor-pointer" id="navigation-items">
+            <a class="text-white font-medium hover:underline decoration-dotted" data-target="about">ABOUT</a>
+            <a class="text-white font-medium hover:underline decoration-dotted" data-target="contact">CONTACT</a>
+        </div>
+    </div>
+    <div class="dotted-background fixed top-0 left-0 w-screen h-screen z-[-1] blur-[2px]"></div>
+    <section id="about">
+        <div class="relative flex flex-col mt-[20px] lg:mt-[100px] md:mt-[70px] w-full px-7">
+            <div class="flex flex-col space-y-4">
+                <a class="text-[#d3d3d3] text-[80px] font-playfair-display lg:text-[120px] md:text-[100px] font-medium">OpenAC</a>
+                <a class="text-[#b1b1b1] text-[30px] text-opacity-45 font-medium ml-2">The Roblox® Anti-Cheat standard</a>
+            </div>
+            <div class="flex-grow flex items-start">
+                <a class="paragraph text-[#9e9e9e] text-[19px] ml-2 font-medium">
+                    OpenAC is proud to be a leading force in the AntiCheat industry, driven by our passionate team: Liker, Unlimited, and Müsli.
+                    We've made a mark in the Roblox® community by crafting invaluable DevForum resources that address various forms of exploiting
+                    software. Our work includes detection solutions for tools like Celery, all mobile exploits, and Electron.
+                    Additionally, we guide developers on how to enhance their existing anti-exploit systems with our resources on AntiCheat methods and securing your anti-cheat.
+                    <br><br>
+                    Our journey began with the development of notable anti-cheat solutions like ASTON, Karma, LAT-AT, and Polygon AE, which have now ceased to exist.
+                    We also played a key role in detecting the now defunct executor Synapse X, a popular exploiting tool that had over 70,000 users, before the acquisition of Byfron Technologies by Roblox® in late 2022.
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="bg-gradient-to-br from-[#3046c0] to-[#6071d1] border-[#a7a7a7] border-[1.5px] rounded-2xl relative flex flex-col w-full p-14">
+            <div class="flex flex-col">
+                <a class="text-[#e4e4e4] text-[50px] font-playfair-display lg:text-[90px] md:text-[70px] font-medium">Questions?</a>
+            </div>
+            <div class="flex-grow flex items-start">
+                <a class="paragraph text-[#d2d2d2] text-[19px] ml-1 font-medium">
+                    For more information about OpenAC, including how to get started and purchase our solutions, join our community on Discord!
+                    We look forward to welcoming you and assisting with any questions you may have!
+                </a>
+            </div>
+            <a href="https://discord.gg/mWHmJgGtuP" class="grid cursor-pointer place-items-center text-[38px] text-[#d2d2d2] font-medium w-[225px] h-[100px] bg-slate-800 hover:bg-opacity-45 backdrop-blur-sm bg-opacity-25 border-[#a7a7a7] border-[1.5px] rounded-2xl mt-8">
+                <img src="./assets/images/discord_logo.png" class="h-[100px]">
+            </a>
+        </div>
+    </section>
+    <section id="copyright" class="grid place-items-center">
+        <a class="text-[#d3d3d3] text-[20px] w-full text-center mt-20 italic">
+            © 2024 OpenAC - All rights reserved
+        </div>
+        <a class="text-[#d3d3d3] text-[10px] w-full text-center italic mb-5">
+            The Roblox® platform, its name, logo, and other related trademarks are the property of Roblox Corporation.
+            OpenAC operates separately and does not represent Roblox Corporation or any of its brands.
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('#navigation-items a');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
